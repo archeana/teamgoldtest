@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- THIS IS WHERE WE LINK OUR CSS -->
+    <link rel="stylesheet" href="/quiz.css">
+
+    <title>Savings Quiz</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+
+<body>
+    <div class="page0" id="page0">
+        <div class="container">
+            <div class="content">
+                <div class="content-card">
+
+                    <h4 class="invite">Budget Bliss like to invite you to take the </h4> <br>
+
+                    <h1 class="headline">Financial Habits Quiz</h1>
+
+                    <img src="favicon.png" alt="kids adding coins to a jar">
+
+                    <br>
+                    <h2>Hello dear money buddies!✨</h2>
+                    <p>Let's take responsibility for our money!
+                        How? We will take you on an interactive journey to understand
+                        where you can improve your expenses and save money!
+                        We will just ask you 17 questions and each answer will give you
+                        specific tips that can help you in some cases there is also a link to more resources.
+                        Let us know if you have questions, feedback or any remarks about this quiz.
+                    </p>
+
+                    <p>✨Thank you!</p>
+
+                    <p style="color:yellow; font-size: 15px">The quiz will only work if you click on the "Lets Begin"
+                        and add a value in the prompt</p>
+                    <div class="bnt-container">
+                        <div class="btn" onclick="LetsAlert()">
+                            <p class="btnp">Let's Begin</p>
+                        </div>
+                        <h3 id="userMsg"></h3>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Inside the quiz-container -->
+    <div class="page1" id="page1-question1">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText"> 1. Which category do you spend more money?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q1a1">Food</button>
+                            <div class="feedback" id="fbq1a1"></div>
+                            <button class="answer-btn" id="q1a2">Transport</button>
+                            <div class="feedback" id="fbq1a2"></div>
+                            <button class="answer-btn" id="q1a3">Activities</button>
+                            <div class="feedback" id="fbq1a3"></div>
+                            <button class="answer-btn" id="q1a4">Household</button>
+                            <div class="feedback" id="fbq1a4"></div>
+                            <button class="answer-btn" id="q1a5">Clothes</button>
+                            <div class="feedback" id="fbq1a5"></div>
+                            <button class="answer-btn" id="q1a6">Health</button>
+                            <div class="feedback" id="fbq1a6"></div>
+                        </div>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page1" id="page1-question2">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">2. Do you frequently dine out or order takeout for most meals?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q2a1">Yes</button>
+                            <div class="feedback" id="fbq2a1"></div>
+                            <button class="answer-btn" id="q2a2">No</button>
+                            <div class="feedback" id="fbq2a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question3">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">3.Do you throw away leftovers or food that has gone bad?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q3a1">Yes</button>
+                            <div class="feedback" id="fbq3a1"></div>
+                            <button class="answer-btn" id="q3a2">No</button>
+                            <div class="feedback" id="fbq3a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question4">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">4. Do you buy pre-cut fruits and vegetables?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q4a1">Yes</button>
+                            <div class="feedback" id="fbq4a1"></div>
+                            <button class="answer-btn" id="q4a2">No</button>
+                            <div class="feedback" id="fbq4a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question5">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">5. Do you have a gym membership but rarely use it?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q5a1">Yes</button>
+                            <div class="feedback" id="fbq5a1"></div>
+                            <button class="answer-btn" id="q5a2">No</button>
+                            <div class="feedback" id="fbq5a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question6">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">6. Do you ignore minor health issues until they become serious?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q6a1">Yes</button>
+                            <div class="feedback" id="fbq6a1"></div>
+                            <button class="answer-btn" id="q6a2">No</button>
+                            <div class="feedback" id="fbq6a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question7">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">7. Are you spending significant money on fast food and unhealthy
+                            snacks?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q7a1">Yes</button>
+                            <div class="feedback" id="fbq7a1"></div>
+                            <button class="answer-btn" id="q7a2">No</button>
+                            <div class="feedback" id="fbq7a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question8">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">8. How often do you drive? </h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q8a1">Every day</button>
+                            <div class="feedback" id="fbq8a1"></div>
+                            <button class="answer-btn" id="q8a2">Only when necessary</button>
+                            <div class="feedback" id="fbq8a2"></div>
+                            <button class="answer-btn" id="q8a3">I don't have a car</button>
+                            <div class="feedback" id="fbq8a3"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question9">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">9. Do you primarily rely on your car for long-distance travel?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q9a1">Yes</button>
+                            <div class="feedback" id="fbq9a1"></div>
+                            <button class="answer-btn" id="q9a2">No</button>
+                            <div class="feedback" id="fbq9a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question10">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">10. Do you often use your car for errands like grocery shopping or
+                            picking up small items?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q10a1">Yes</button>
+                            <div class="feedback" id="fbq10a1"></div>
+                            <button class="answer-btn" id="q10a2">No</button>
+                            <div class="feedback" id="fbq10a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question11">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText"> 11. Do you participate in expensive recreational activities?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q11a1">Yes</button>
+                            <div class="feedback" id="fbq11a1"></div>
+                            <button class="answer-btn" id="q11a2">No</button>
+                            <div class="feedback" id="fbq11a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question12">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">12. Do you use incandescent light bulbs instead of energy-efficient
+                            ones?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q12a1">Yes</button>
+                            <div class="feedback" id="fbq12a1"></div>
+                            <button class="answer-btn" id="q12a2">No</button>
+                            <div class="feedback" id="fbq12a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question13">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">13. Do you often purchase single-use items (e.g. paper napkins, plastic
+                            water bottles, straws)?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q13a1">Yes</button>
+                            <div class="feedback" id="fbq13a1"></div>
+                            <button class="answer-btn" id="q13a2">No</button>
+                            <div class="feedback" id="fbq13a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question14">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">14. Do you frequently buy clothes to keep up with the latest fashion
+                            trends?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q14a1">Yes</button>
+                            <div class="feedback" id="fbq14a1"></div>
+                            <button class="answer-btn" id="q14a2">No</button>
+                            <div class="feedback" id="fbq14a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question15">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">15. Do you discard clothes after wearing them just a few times?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q15a1">Yes</button>
+                            <div class="feedback" id="fbq15a1"></div>
+                            <button class="answer-btn" id="q15a2">No</button>
+                            <div class="feedback" id="fbq15a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question16">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">16. Do you buy second-hand clothes instead of buying new ones when
+                            possible?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q16a1">Yes</button>
+                            <div class="feedback" id="fbq16a1"></div>
+                            <button class="answer-btn" id="q16a2">No</button>
+                            <div class="feedback" id="fbq16a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn next-button" onclick="nextQuestion()">
+                        <p class="btnp">Next</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page1" id="page1-question17">
+        <div class="question-container">
+            <div class="content">
+                <div class="content-card">
+                    <div class="question">
+                        <h2 class="questionText">17. Do you buy second-hand itens to your house instead of buying new
+                            ones?</h2>
+                        <div class="options">
+                            <button class="answer-btn" id="q17a1">Yes</button>
+                            <div class="feedback" id="fbq17a1"></div>
+                            <button class="answer-btn" id="q17a2">No</button>
+                            <div class="feedback" id="fbq17a2"></div>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="backQuestion()">
+                        <p class="btnp">Back</p>
+                    </div>
+                    <div class="btn" onclick="LastQuestion()">
+                        <p class="btnp">Last</p>
+                    </div>
+                    <div>
+                        <p class="pfin" style="display: none;">Thank you for doing the quiz!<br> Check our website for
+                            more information</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINK OUR JAVASCRIPT -->
+    <script src="quiz.js"></script>
+</body>
+
+</html>
