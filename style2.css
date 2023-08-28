@@ -1,0 +1,354 @@
+:root {
+    --gold: #ffd700;
+    --navy-blue: #001F3F;
+    --dark-red: #8B0000;
+    --offwhite: #f5f5f5;
+}
+
+body {
+    margin: auto 0;
+    background-color: var(--offwhite);
+    font-family: Sans-Serif;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #00008B;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: var(--dark-red)
+}
+
+a:visited {
+    color: var(--dark-red)
+}
+
+a:hover {
+    color: var(--navy-blue)
+}
+
+a:active {
+    color: var(--offwhite)
+}
+
+/* header^*/
+.header {
+    display: flex;
+    flex-direction: column;
+    margin: 2vw;
+    margin-bottom: 4vw;
+    text-align: center;
+    border-style: solid;
+    border-width: 4px;
+    border-color: var(--navy-blue);
+    background-color: var(--gold);
+}
+
+.htop {
+    background-color: var(--navy-blue);
+    color: var(--gold);
+    font-size: xx-large;
+    margin: 1vw;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--gold);
+    justify-content: space-around;
+    padding: 8px;
+    text-align: center;
+    font-size: max(2vw, 20px);
+}
+
+.hbottom a {
+    margin: 2vw;
+}
+
+
+li {
+    text-decoration: none;
+    list-style: none;
+    padding: 20px;
+}
+
+
+
+/* dashboards/savinngs map (SM) - ana*/
+.callquiz {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 2% 5%;
+    background-color: rgba(36, 70, 250, 1);
+    max-height: 20vh;
+    overflow: hidden;
+    margin: 2%;
+}
+
+.img-cq img {
+    max-width: 100%;
+    height: auto;
+}
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.h2-cq {
+    font-size: 4vw;
+    /* Adjust the value as needed */
+    font-weight: bold;
+    margin-bottom: 1.5vh;
+    /* Adjust the value as needed */
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+
+.h2-line1 {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.h2-line2 {
+    display: block;
+    font-weight: bold;
+}
+
+.btncq {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.btncq a {
+    display: inline-flex;
+    /* Use inline-flex */
+    align-items: center;
+    padding: 2vw 4vw;
+    /* Use vw units for responsive padding */
+    border: 1px solid white;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #ffef5e;
+    color: blue;
+    font-size: 2.5vw;
+    /* Use vw units for responsive font size */
+}
+
+
+
+
+/* dashboards/savinngs map (SM) zone is the icon zone - ana*/
+.container-sm {
+    display: grid;
+    gap: 50px;
+    /* fraction is better than px or % its responsible */
+    /* grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    margin: 20px 20px; */
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    /* Updated width */
+    grid-template-rows: auto;
+    /* Fixed row height */
+    margin: 20px auto;
+    justify-content: center;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.clothes img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* #divcl,
+#divtr {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: rgb(207, 228, 236);
+    margin-top: 20px;
+    grid-row: span 2;
+    /* Add this to span across rows */
+
+
+/* bew div toggle */
+.toggle-content {
+    display: none;
+    /* Hide toggled content by default */
+    background-color: rgb(207, 228, 236);
+    max-width: 120%;
+    margin: 0 auto;
+
+    padding: 50px;
+    /* Use auto for height to allow the content to dictate the height */
+    height: auto;
+    /* Add some bottom margin to create space between sections */
+    margin-bottom: 20px;
+}
+
+/* Adjust card max-width within toggle content */
+.toggle-content .articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Define grid columns */
+    gap: 20px; /* Add some gap between cards */
+    max-width: 120%; /* Set the maximum width for the articles */
+    margin: 0 auto; /* Center the articles horizontally */
+    
+}
+
+article {
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: #fff;
+    transform-origin: center;
+}
+
+article a::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    cursor: pointer;
+    content: "";
+}
+
+/* basic article elements styling */
+article h2 {
+    margin: 0 0 18px 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+article img {
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+    padding: 24px;
+}
+
+article a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* using the has() relational pseudo selector to update our custom properties */
+article:has(:hover, :focus) {
+    --img-scale: 1.1;
+    --title-color: #28666e;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+
+.articles {
+    display: grid;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+
+
+/* end of hide website links */
+
+.transport img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.furniture img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.activities img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.food img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.health img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.zone {
+    cursor: pointer;
+    /*because we use the grid we dont need this anymore display:inline-block;*/
+    text-align: center;
+    font-size: 2em;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    transition: all 0.3s linear;
+}
+
+.zone:hover {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+    -o-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+}
+
+@media (max-width: 768px) {
+    .callquiz {
+        grid-template-columns: 1fr;
+        /* Switch to single column on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container-sm {
+        grid-template-columns: 1fr;
+        /* Single column layout */
+    }
+}

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain attribute:*/
+        file = elmnt.getAttribute("headerthing");
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              /*remove the attribute, and call this function once more:*/
+              elmnt.removeAttribute("headerthing");
+              includeHTML();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+        }
+      }
+    }
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+  <!-- css link -->
+  <link rel="stylesheet" type="text/css" href="./style2.css" />
+  <title>Savings map</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png" />
+
+  <!-- icon -->
+</head>
+
+<body>
+  <div headerthing="./header.html"></div>
+
+  <!-- Add the main div -ana -->
+
+  <section class="callquiz">
+    <div class="img-cq">
+      <img src="/savemunz.png" alt="Illustration" />
+    </div>
+    <div class="right-content">
+      <h2 class="h2-cq">
+        <span class="h2-line1">Not sure where to begin?</span>
+        <span class="h2-line2">Take our saving quiz!</span>
+      </h2>
+      <div class="btncq">
+        <a href="/quiz.html" target="_blank">Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!--  Part with the tips -ana -->
+  <h2 class="h2-cq" style="color:black">👇 Check these links for ways to save money</h2>
+  <section class="Dashboard">
+    <div class="container-sm">
+      <button onclick="toggleContent('divcl')">
+        <div class="zone clothes">
+          <img src="/Retail markdown-bro.png" alt="Illustration about clothes" title="clothes" />
+          <h4>Clothes</h4>
+        </div>
+      </button>
+      <!-- Toggled content for Clothes -->
+      <div id="divcl" class="toggle-content">
+        <!-- Toggled content goes here -->
+        <h2 id="h2cl">Clothes</h2>
+        <section class="articles">
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="/vinted.png" alt="vinted logo" />
+              </figure>
+              <div class="article-body">
+                <h2>Vinted</h2>
+                <p>Thrift second-hand clothing - sell and buy online</p>
+                <a href="https://www.vinted.com/" class="read-more" target="_blank"></a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="depop.png" alt="clothes in a rack" />
+              </figure>
+              <div class="article-body">
+                <h2>Depop - buy and sell clothes</h2>
+                <p>
+                  Designer. Preloved. Vintage. Streetwear. Sneakers. Whatever
+                  your style.
+                </p>
+                <a href="https://www.depop.com/" target="_blank" class="read-more"></a>
+              </div>
+            </div>
+          </article>
+          <!-- add more cards -->
+        </section>
+      </div>
+      <!-- end of hide toglle -->
+      <!-- transport -->
+      <button onclick="toggleContent('divtr')">
+        <div class="zone transport">
+          <img src="Life in a city-amico.png" alt="Illustration with a city and transports" title="transport" />
+          <h4>Transport</h4>
+        </div>
+      </button>
+      <!-- change id name -->
+      <div id="divtr" class="toggle-content">
+        <h2 id="h2tr">Transport</h2>
+        <section class="articles">
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="/blabla.png" alt="blabla car logo" />
+              </figure>
+              <div class="article-body">
+                <h2>blablacar</h2>
+                <p>
+                  Car sharing - find the perfect ride from our wide range of
+                  destinations and routes at low prices.
+                </p>
+                <a href="https://www.blablacar.co.uk/" class="read-more" target="_blank"></a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="waze.png" alt="waze logo" />
+              </figure>
+              <div class="article-body">
+                <h2>Waze</h2>
+                <p>
+                  Realtime driving directions based on live traffic updates
+                  helping you to drive quicker and spend less fuel
+                </p>
+                <a href="https://www.waze.com/live-map/" target="_blank" class="read-more"></a>
+              </div>
+            </div>
+          </article>
+          <!-- add more cards -->
+        </section>
+      </div>
+      <!-- end of hide toglle -->
+
+      <!-- furniture button -->
+      <button onclick="toggleContent('divfr')">
+        <div class="zone furniture">
+          <img src="Furniture store-amico.png" alt="Illustration of the furniture in a living room" title="Household" />
+          <h4>Household</h4>
+        </div>
+      </button>
+      <!-- change id name -->
+      <div id="divfr" class="toggle-content">
+        <h2 id="h2fr">Household</h2>
+        <section class="articles">
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="facebook market place.png" alt="facebook marketplace logo" />
+              </figure>
+              <div class="article-body">
+                <h2>Facebook Marketplace</h2>
+                <p>
+                  Buy or sell new and used items easily on Facebook Marketplace, locally or from businesses.
+                </p>
+                <a href="https://www.facebook.com/login/?next=%2Fmarketplace%2F/" class="read-more" target="_blank"></a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="/fleamarkt.jpg" alt="image of a flea market" />
+              </figure>
+              <div class="article-body">
+                <h2>Flea Market</h2>
+                <p>
+                  Search for local flea markets near me. Best place to find unique pieces and cheap.
+                </p>
+                <a href="https://www.google.com/search?q=local+flea+markets+near+me&sca_esv=559082108&source=hp&ei=F73kZO71BLuakdUPmvWU-Aw&iflsig=AD69kcEAAAAAZOTLJ7X_7l6WQcejAjhdbikhpd_YeSE2&oq=local+flea&gs_lp=Egdnd3Mtd2l6Igpsb2NhbCBmbGVhKgIIAjIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARIwTNQAFiBInADeACQAQCYAdwBoAGXD6oBBjAuMTEuMrgBA8gBAPgBAagCCcICERAuGIMBGMcBGLEDGNEDGIAEwgILEAAYgAQYsQMYgwHCAhEQLhiKBRixAxiDARjHARjRA8ICCBAuGLEDGIAEwgIREC4YgAQYsQMYgwEYxwEY0QPCAgQQABgDwgILEC4YigUYsQMYgwHCAggQABiKBRixA8ICCBAAGIAEGLEDwgIIEC4YgAQYsQPCAgsQABiABBixAxjJA8ICCBAAGIoFGJIDwgILEC4YgAQYsQMYgwHCAgUQLhiABMICCxAuGIAEGMcBGNEDwgIKEAAYAxiPARjqAsICChAuGAMYjwEY6gLCAgsQABiKBRixAxiDAcICCxAuGIMBGLEDGIoFwgIIEC4YigUYsQPCAg4QLhiABBixAxjHARjRA8ICDhAAGIAEGLEDGIMBGMkDwgIIEAAYgAQYkgPCAggQABiABBjJA8ICCxAuGIAEGMcBGK8B&sclient=gws-wiz"
+                  target="_blank" class="read-more"></a>
+              </div>
+            </div>
+          </article>
+          <!-- add more cards -->
+        </section>
+      </div>
+      <!-- end of hide toglle -->
+
+
+
+      <!-- Activities button -->
+      <button onclick="toggleContent('divat')">
+        <div class="zone activities">
+          <img src="/About me-cuate.png" alt="Illustration of a young man about his interests" title="Activities" />
+          <h4>Activities</h4>
+        </div>
+      </button>
+      <!-- change id name -->
+      <div id="divat" class="toggle-content">
+        <h2 id="h2at">Activities</h2>
+        <section class="articles">
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="/triftstore.jpg" alt="blabla car logo" />
+              </figure>
+              <div class="article-body">
+                <h2>Search thrift stores near me</h2>
+                <p>
+                  Depending on what are you looking for you might find it in a second hand shop. I bought yarn and
+                  needles easily in these stores.
+                </p>
+                <a href="https://www.google.com/search?q=search+thrift+stores+near+me&sca_esv=559082108&ei=6r7kZK2iDdWmkdUP7JmPyAE&oq=search+trift&gs_lp=Egxnd3Mtd2l6LXNlcnAiDHNlYXJjaCB0cmlmdCoCCAEyBxAAGA0YgAQyBxAAGA0YgAQyBxAAGA0YgAQyBxAAGA0YgAQyBxAAGA0YgAQyChAAGAUYHhgNGA8yCBAAGAgYHhgNMggQABgIGB4YDTIIEAAYCBgeGA0yCBAAGAgYHhgNSJhKUIIKWKs5cAN4AJABAJgB2AGgAcwSqgEGMC4xMC40uAEDyAEA-AEBwgILEAAYigUYhgMYsAPCAg4QABiKBRixAxiDARiRAsICCBAAGIoFGJECwgILEAAYigUYsQMYgwHCAhEQLhiDARjHARixAxjRAxiKBcICERAuGIAEGLEDGIMBGMcBGNEDwgILEC4YgAQYsQMYgwHCAgsQLhiKBRixAxiDAcICERAuGIoFGLEDGMcBGNEDGJECwgIIEC4YigUYkQLCAgsQABiABBixAxiDAcICCBAuGIAEGLEDwgIgEC4YigUYsQMYxwEY0QMYkQIYlwUY3AQY3gQY4ATYAQHCAggQABiABBixA8ICBRAAGIAEwgIFEC4YgATCAggQABgWGB4YD8ICBhAAGBYYHsICChAAGBYYHhgPGArCAggQABiKBRiGA-IDBBgAIEGIBgGQBgW6BgYIARABGBQ&sclient=gws-wiz-serp"
+                  class="read-more" target="_blank"></a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="/833_ebay.jpg" alt="waze logo" />
+              </figure>
+              <div class="article-body">
+                <h2>Ebay</h2>
+                <p>
+                  eBay is an online marketplace that allows individuals and businesses to buy and sell a wide variety of
+                  items.
+                </p>
+                <a href="https://www.ebay.com/b/Toys-Hobbies/220/bn_1865497" target="_blank" class="read-more"></a>
+              </div>
+            </div>
+          </article>
+          <!-- add more cards -->
+        </section>
+      </div>
+      <!-- end of hide toglle -->
+      <!-- Food button -->
+      <button onclick="toggleContent('divfood')">
+        <div class="zone food">
+          <img src="Eco shopping-rafiki.png" alt="Illustration of a woman in a supermarkt" title="Food" />
+          <h4>Food</h4>
+        </div>
+      </button>
+      <!-- change id name -->
+      <div id="divfood" class="toggle-content">
+        <h2 id="h2food">Food</h2>
+        <section class="articles">
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="/foodsharing.png" alt="foodsharing logo" />
+              </figure>
+              <div class="article-body">
+                <h2>Foodsharing</h2>
+                <p>
+                  Foodsharing involves collecting unwanted and overproduced food products that would otherwise be
+                  discarded and redistributing them to the people who will consume them.
+                </p>
+                <a href="https://foodsharing.de/" class="read-more" target="_blank"></a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="/toogoodtogo.png" alt="togoodtogo logo" />
+              </figure>
+              <div class="article-body">
+                <h2>To good to go</h2>
+                <p>
+                  Too Good To Go is the app that lets you rescue unsold food at your favorite spots from an untimely
+                  fate.
+                </p>
+                <a href="https://www.toogoodtogo.com/de-ch" target="_blank" class="read-more"></a>
+              </div>
+            </div>
+          </article>
+          <!-- add more cards -->
+        </section>
+      </div>
+      <!-- end of hide toglle -->
+      <!-- Health button -->
+      <button onclick="toggleContent('divhe')">
+        <div class="zone health">
+          <img src="/Pediatrician-pana.png" alt="Illustration of a kid in the doctors office" title="Health" />
+          <h4>Health</h4>
+        </div>
+      </button>
+      <!-- change id name -->
+      <div id="divhe" class="toggle-content">
+        <h2 id="h2he">Health</h2>
+        <section class="articles">
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="/heathr.jpg" alt="slides of bread with veggies" />
+              </figure>
+              <div class="article-body">
+                <h2>5 lifestyle changes</h2>
+                <p>
+                  Staying fit can benefit more than just your appearance. Good health can also bring more wealth your
+                  way by helping you save money.
+                </p>
+                <a href="https://www.discover.com/online-banking/banking-topics/5-lifestyle-changes-to-make-save-more-money/"
+                  class="read-more" target="_blank"></a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="/heath insurance.jpg" alt="image of money with a stethoscope" />
+              </figure>
+              <div class="article-body">
+                <h2>How to save money on Health insurance</h2>
+                <p>
+                  Check this 8 Ways to Pay Less for Health Insurance.
+                </p>
+                <a href="https://www.experian.com/blogs/ask-experian/how-to-save-money-on-health-insurance/"
+                  target="_blank" class="read-more"></a>
+              </div>
+            </div>
+          </article>
+          <!-- add more cards -->
+        </section>
+      </div>
+      <!-- end of hide toglle -->
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script src="script2.js"></script>
+
+  <div headerthing="./footer.html"></div>
+  <script>
+    includeHTML();
+  </script>
+</body>
+
+</html>
