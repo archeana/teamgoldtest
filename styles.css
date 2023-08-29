@@ -3,10 +3,10 @@
     --gold:/* #ffd700 *//* #c19344 *//* #498ab3 *//* #d3b152 *//* #cdad4e */  /* end of yellow */
     #f1af3f
     ;
-    --navy-blue:/* #001F3F *//* #283b55 *//* #a5c2c7 *//* #384b73 *//* #365892 */   /* end of blue */
-    #321b3b
+    --navy-blue:#00254b/* #283b55 *//* #a5c2c7 *//* #384b73 *//* #365892 */   /* end of blue */
+    /* #321b3b */
     ;
-    --light-blue: #68266e;
+    --light-blue: /* #68266e */#0e467e;
     --dark-red:#8B0000;
     --offwhite:#f5f5f5;
 }
@@ -64,7 +64,7 @@ a:active{
     justify-content: space-around;
     padding:8px;
     text-align: center;
-    font-size:max(3vw, 20px);
+    font-size:max(2vw, 20px);
 }
 
 .hbottom a{
@@ -73,9 +73,9 @@ a:active{
 
 /* footer */
 .footer-content{
-    padding:10px;
+    padding:0px;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     /* flex-direction: column; anatook*/
@@ -91,7 +91,7 @@ a:active{
 }
 
 .contact-info, .footer-links, .social-media {
-    margin-bottom: 15px;
+    margin: 16px;
 }
 
 .footer-links ul {
@@ -107,7 +107,7 @@ a:active{
 .social-media a {
     margin-right: 10px;
     text-decoration: none;
-    color: blue;
+    color: var(--light-blue);
     transition: color 0.3s ease;
 }
 
@@ -119,7 +119,8 @@ a:active{
 .copyright {
     text-align: center;
     background-color:var(--navy-blue);
-    padding: 10px;
+    padding: 16px;
+    padding-left: 32px;
     color: white;
     align-items: center;
 }
@@ -276,3 +277,161 @@ hr{
 }
 
 
+/* newsletter */
+
+.nl{
+    background-color: var(--light-blue);
+    color: var(--offwhite);
+    padding:4vw;
+}
+
+.nltitles{
+    text-align: center;
+}
+
+.nlboxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.nlbox{
+    background-color: var(--gold);
+    border-radius:8px;
+    padding:2vw;
+    color:var(--navy-blue);
+
+    max-width:500px;
+    margin:2vw;
+    width:100%;
+    
+    text-align: center;
+}
+
+.nlbox p{
+    display:flex;
+    justify-content: center;
+    margin-left:8px;
+    margin-right:8px;
+}
+
+.nlmailinput{
+    padding:8px;
+    border-style:solid;
+    border-color:var(--navy-blue);
+    border-radius:4px;
+    margin-bottom:16px;
+}
+
+.nlhr{
+    border-style:solid;
+    border-color:var(--offwhite);
+    border-width:1px;
+    margin-top:1.5vw;
+    margin-bottom:1.5vw;
+}
+
+@media only screen and (max-width: 1338px) {
+    .nlhr{
+        display:none;
+    }
+  }
+
+.nlfreqradio{
+    text-align:left;
+    padding-left:4vw;
+    margin-bottom:16px;
+}
+
+/* .nlfreqcustom{
+    visibility: collapse;
+} */
+
+.nlfreqcustom input{
+    max-width:42px;
+    margin-top:16px;
+}
+
+.nlfreqcustom {
+    display:none;
+    
+}
+
+/* 
+.cb:checked{
+    visibility: collapse;
+  } */
+
+  .nlsubmitbtn input{
+    background-color:var(--gold);
+    color:var(--navy-blue);
+    border-color:var(--offwhite);
+    border-style:solid;
+    border-width:2px;
+    border-radius:4px;
+    font-size:larger;
+    padding:1vw;
+  }
+
+  .nlsubmitbtn input:hover{
+    background-color:var(--navy-blue);
+    color:var(--gold);
+  }
+
+  .nlsubmitbtn input:active{
+    background-color:var(--light-blue);
+    border-color:var(--gold);
+    color:var(--offwhite);
+  }
+
+.nlsubmitbtn{
+    display:flex;
+    justify-content: center;
+}
+
+.nlmailinput input:valid{
+   background-color: greenyellow;
+}
+
+.nlmailinput input:invalid{
+   background-color:orange;
+}
+
+.hidden{
+    display:none;
+}
+
+.nlsbutton{
+    
+    background-color:var(--gold);
+    color:var(--navy-blue);
+    border-color:var(--light-blue);
+    border-style:solid;
+    border-width:6px;
+    border-radius:4px;
+    font-size:larger;
+    padding:1vw;
+
+}
+
+.nlsbutton:hover{
+    
+    background-color:var(--dark-red);
+    color:var(--gold);
+    border-color:var(--navy-blue);
+
+}
+.nlsbutton:active{
+    
+    background-color:var(--light-blue);
+    color:var(--gold);
+    border-color:var(--navy-blue);
+
+}
+
+.btncenter{
+
+    display: flex;
+    justify-content: center;
+margin-bottom:128px;
+}
